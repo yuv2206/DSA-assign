@@ -1,5 +1,4 @@
 #include <iostream>
-
 using namespace std;
 
 const int MAX_SIZE = 5;
@@ -67,7 +66,6 @@ void display() {
 
 int main() {
     int choice, value;
-
     do {
         cout << "\n--- Queue Operations Menu ---" << endl;
         cout << "1. Enqueue " << endl;
@@ -79,7 +77,6 @@ int main() {
         cout << "7. Exit" << endl;
         cout << "Enter your choice: ";
         cin >> choice;
-
         switch (choice) {
             case 1:
                 cout << "Enter value to enqueue: ";
@@ -116,7 +113,6 @@ int main() {
                 cout << "Invalid choice. Please try again." << endl;
         }
     } while (choice != 7);
-
     return 0;
 }
 
