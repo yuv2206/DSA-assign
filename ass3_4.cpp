@@ -18,12 +18,10 @@ int main() {
     string infix;
     cout << "Enter the expression: ";
     cin >> infix;
-
     string postfix = "";
     stack<char> s;
     s.push('(');
     infix += ')';
-
     for (char c : infix) {
         if (c == '(') {
             s.push(c);
@@ -45,9 +43,7 @@ int main() {
             s.push(c);
         }
     }
-
     cout << "Postfix: " << postfix << endl;
-
     return 0;
 }
 
