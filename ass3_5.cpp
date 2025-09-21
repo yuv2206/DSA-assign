@@ -27,7 +27,6 @@ int main() {
     string exp;
     cout << "Enter postfix expression: ";
     getline(cin, exp);
-
     for (char c : exp) {
         if (isdigit(c)) {
             push(c - '0');
@@ -39,7 +38,6 @@ int main() {
                 cout << "Error: Invalid expression, not enough operands." << endl;
                 return 1;
             }
-
             int result;
             switch (c) {
                 case '+':
@@ -62,13 +60,11 @@ int main() {
             push(result);
         }
     }
-
     if (top == 0) {
         cout << "Result: " << pop() << endl;
     } else {
         cout << "Error: Invalid expression, too many operands or not enough operators." << endl;
     }
-
     return 0;
 }
 
