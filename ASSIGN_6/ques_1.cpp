@@ -206,3 +206,182 @@ int main() {
     Menu(cll);
     return 0;
 }
+
+
+/*
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* prev;
+    Node* next;
+};
+
+class DLL {
+private:
+    Node* head = nullptr;
+    Node* tail = nullptr;
+
+public:
+    ~DLL() {
+        Node* current = head;
+        while (current != nullptr) {
+            Node* next_node = current->next;
+            delete current;
+            current = next_node;
+        }
+        head = tail = nullptr;
+    }
+
+    void insertAtBeginning(int data) {
+        Node* newNode = new Node{data, nullptr, head};
+        if (head == nullptr) {
+            head = tail = newNode;
+        } else {
+            head->prev = newNode;
+            head = newNode;
+        }
+        cout << "Inserted " << data << " at the beginning." << endl;
+    }
+
+    void insertAtEnd(int data) {
+        Node* newNode = new Node{data, tail, nullptr};
+        if (tail == nullptr) {
+            head = tail = newNode;
+        } else {
+            tail->next = newNode;
+            tail = newNode;
+        }
+        cout << "Inserted " << data << " at the end." << endl;
+    }
+
+    void insertBefore(int target, int data) {
+        Node* temp = head;
+        while (temp != nullptr && temp->data != target) {
+            temp = temp->next;
+        }
+
+        if (temp == nullptr) {
+            cout << "Node with value " << target << " not found." << endl;
+            return;
+        }
+
+        if (temp == head) {
+            insertAtBeginning(data); 
+            return;
+        }
+
+        Node* newNode = new Node{data, temp->prev, temp};
+        temp->prev->next = newNode;
+        temp->prev = newNode;
+        cout << "Inserted " << data << " before " << target << "." << endl;
+    }
+
+    void deleteNode(int data) {
+        Node* temp = head;
+        while (temp != nullptr && temp->data != data) {
+            temp = temp->next;
+        }
+
+        if (temp == nullptr) {
+            cout << "Node with value " << data << " not found." << endl;
+            return;
+        }
+
+        if (temp == head && temp == tail) { 
+            head = tail = nullptr;
+        } else if (temp == head) { 
+            head = head->next;
+            head->prev = nullptr;
+        } else if (temp == tail) { 
+            tail = tail->prev;
+            tail->next = nullptr;
+        } else { 
+            temp->prev->next = temp->next;
+            temp->next->prev = temp->prev;
+        }
+
+        delete temp;
+        cout << "Deleted node with value " << data << "." << endl;
+    }
+
+    void searchNode(int data) {
+        int position = 1;
+        Node* temp = head;
+        while (temp != nullptr && temp->data != data) {
+            temp = temp->next;
+            position++;
+        }
+        if (temp == nullptr) {
+            cout << "Node with value " << data << " not found." << endl;
+        } else {
+            cout << "Node with value " << data << " found at position " << position << "." << endl;
+        }
+    }
+
+    void display() {
+        if (head == nullptr) {
+            cout << "List is empty." << endl;
+            return;
+        }
+        Node* temp = head;
+        cout << "List (Forward): NULL <-> ";
+        while (temp != nullptr) {
+            cout << temp->data;
+            if (temp->next != nullptr) {
+                cout << " <-> ";
+            }
+            temp = temp->next;
+        }
+        cout << " <-> NULL" << endl;
+    }
+};
+
+void Menu(DLL& list) {
+    int choice, data, target;
+    do {
+        cout << "\n--- Doubly Linked List Menu ---" << endl;
+        cout << "1. Display List" << endl;
+        cout << "2. Insert at Beginning" << endl;
+        cout << "3. Insert at End" << endl;
+        cout << "4. Insert After a Node" << endl;
+        cout << "5. Insert Before a Node" << endl;
+        cout << "6. Delete Node (by value, e.g., 'Delete Node 60')" << endl;
+        cout << "7. Search Node" << endl;
+        cout << "8. Exit Program" << endl;
+        cout << "Enter your choice (1-8): ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1: list.display(); break;
+            case 2:
+                cout << "Enter data to insert: "; cin >> data;
+                list.insertAtBeginning(data); break;
+            case 3:
+                cout << "Enter data to insert: "; cin >> data;
+                list.insertAtEnd(data); break;
+            case 4:
+                cout << "Enter target node value to insert BEFORE: "; cin >> target;
+                cout << "Enter data to insert: "; cin >> data;
+                list.insertBefore(target, data); break;
+            case 5:
+                cout << "Enter value of node to delete: "; cin >> data;
+                list.deleteNode(data); break;
+            case 6:
+                cout << "Enter value of node to search: "; cin >> data;
+                list.searchNode(data); break;
+            case 7:
+                cout << "Exiting Doubly Linked List Program." << endl; break;
+            default:
+                cout << "Invalid choice. Please try again." << endl;
+        }
+    } while (choice != 7);
+}
+
+int main() {
+    DLL dll;
+    Menu(dll);
+    return 0;
+}
+*/
