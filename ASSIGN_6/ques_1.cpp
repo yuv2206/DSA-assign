@@ -167,12 +167,11 @@ void Menu(CLL& list) {
         cout << "1. Display List" << endl;
         cout << "2. Insert at Beginning" << endl;
         cout << "3. Insert at End" << endl;
-        cout << "4. Insert After a Node" << endl;
-        cout << "5. Insert Before a Node" << endl;
-        cout << "6. Delete Node (by value, e.g., 'Delete Node 60')" << endl;
-        cout << "7. Search Node" << endl;
-        cout << "8. Exit Program" << endl;
-        cout << "Enter your choice (1-8): ";
+        cout << "4. Insert Before a Node" << endl;
+        cout << "5. Delete Node (by value, e.g., 'Delete Node 60')" << endl;
+        cout << "6. Search Node" << endl;
+        cout << "7. Exit Program" << endl;
+        cout << "Enter your choice (1-7): ";
         cin >> choice;
 
         switch (choice) {
@@ -345,12 +344,11 @@ void Menu(DLL& list) {
         cout << "1. Display List" << endl;
         cout << "2. Insert at Beginning" << endl;
         cout << "3. Insert at End" << endl;
-        cout << "4. Insert After a Node" << endl;
-        cout << "5. Insert Before a Node" << endl;
-        cout << "6. Delete Node (by value, e.g., 'Delete Node 60')" << endl;
-        cout << "7. Search Node" << endl;
-        cout << "8. Exit Program" << endl;
-        cout << "Enter your choice (1-8): ";
+        cout << "4. Insert Before a Node" << endl;
+        cout << "5. Delete Node (by value, e.g., 'Delete Node 60')" << endl;
+        cout << "6. Search Node" << endl;
+        cout << "7. Exit Program" << endl;
+        cout << "Enter your choice (1-7): ";
         cin >> choice;
 
         switch (choice) {
